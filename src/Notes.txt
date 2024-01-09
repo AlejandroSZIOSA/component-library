@@ -1,0 +1,82 @@
+1-Passing props to a component 
+
+ Props can pass any JavaScript value through them, including objects, arrays, functions, 
+and even JSX!
+
+2-props(Keyword)
+
+functions—in fact, props are the only argument to your component! React component functions 
+accept a single argument, a props object:
+
+function Avatar(props) {
+  let person = props.person;
+  let size = props.size;
+  // ...
+}
+
+Usually you don’t need the whole props object itself, so you destructure it into individual props.
+“destructuring”
+
+function Avatar({ person, size }) {
+  // ...
+}
+
+3-Specifying a default value for a prop 
+
+function Avatar({ person, size = 100 }) {
+  // ...
+}
+
+The default value is only used if the size prop is missing or if you pass size={undefined}. 
+But if you pass size={null} or size={0}, the default value will not be used.
+
+4-Forwarding props with the JSX spread syntax 
+
+Sometimes, passing props gets very repetitive:
+
+Function Profile({ person, size, isSepia, thickBorder }) {
+  return ()
+  }
+
+Because they don’t use any of their props directly, it can make sense to use a more 
+concise “spread” syntax:
+
+function Profile(props) {
+  return (
+    <div className="card">
+      <Avatar {...props} />
+    </div>
+  );
+}
+
+5- Children prop
+
+return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  );
+
+
+function Card({ children }) {
+  return (
+    <div className="card">
+      {children}
+    </div>
+  );
+}
+
+6-Recap
+*To pass props, add them to the JSX, just like you would with HTML attributes.
+*To read props, use the function Avatar({ person, size }) destructuring syntax.
+*You can specify a default value like size = 100, which is used for missing and undefined props.
+*You can forward all props with <Avatar {...props} /> JSX spread syntax, but don’t overuse it!
+*Nested JSX like <Card><Avatar /></Card> will appear as Card component’s children prop.
+*Props are read-only snapshots in time: every render receives a new version of props.
+*You can’t change props. When you need interactivity, you’ll need to set state.
