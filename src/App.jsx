@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { FaBeer } from "react-icons/fa";
 import { AiFillAliwangwang } from "react-icons/ai";
 import { AiFillAccountBook } from "react-icons/ai";
@@ -31,7 +28,7 @@ function App() {
           flexDirection: "row",
           backgroundColor: props.color,
           alignItems: "center",
-          border: "1px solid gray",
+          /* border: "1px solid gray", */
           borderRadius: "10px",
         }}
       >
@@ -86,7 +83,7 @@ function App() {
         <h2>Alerts</h2>
         <div className="alerts-container">
           <CustomAlert color="red" icon="/src/assets/alert-icon1.png" />
-          <CustomAlert color="blue" icon="/src/assets/alert-icon2.png" />
+          <CustomAlert color="yellow" icon="/src/assets/alert-icon2.png" />
           <CustomAlert color="green" icon="/src/assets/alert-icon3.png" />
         </div>
 
