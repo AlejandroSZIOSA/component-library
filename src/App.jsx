@@ -75,9 +75,9 @@ function App() {
       <div className="content-container">
         <h2>Buttons</h2>
         <div className="btn-container">
-          <CustomBtn color="red" size="20px 15px 20px 15px" />
-          <CustomBtn color="gray" size="10px 15px 10px 15px" />
-          <CustomBtn color="orange" size="5px 25px 5px 25px" />
+          <CustomBtn color="red" size="20px" />
+          <CustomBtn color="gray" size="15px" />
+          <CustomBtn color="orange" size="10" />
         </div>
 
         <h2>Alerts</h2>
