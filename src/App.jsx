@@ -1,6 +1,9 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import { FaBeer } from "react-icons/fa";
+import { AiFillAliwangwang } from "react-icons/ai";
+import { AiFillAccountBook } from "react-icons/ai";
 import "./App.css";
 
 function App() {
@@ -48,6 +51,27 @@ function App() {
     );
   }
 
+  //Default props + children
+  function CustomBadge({ children, color, size = "25px" }) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          width: "80px",
+          height: "5px",
+          padding: size,
+          background: color,
+          fontSize: "large",
+          borderRadius: "10px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {children} Badge
+      </div>
+    );
+  }
+
   return (
     <>
       <h1>Custom Components</h1>
@@ -64,6 +88,19 @@ function App() {
           <CustomAlert color="red" icon="/src/assets/alert-icon1.png" />
           <CustomAlert color="blue" icon="/src/assets/alert-icon2.png" />
           <CustomAlert color="green" icon="/src/assets/alert-icon3.png" />
+        </div>
+
+        <h2>Badge</h2>
+        <div className="badge-container">
+          <CustomBadge color="grey">
+            <FaBeer size="40px" />
+          </CustomBadge>
+          <CustomBadge color="aqua" size="20px">
+            <AiFillAliwangwang size="30px" />
+          </CustomBadge>
+          <CustomBadge color="orange" size="10px">
+            <AiFillAccountBook size="20px" />
+          </CustomBadge>
         </div>
       </div>
     </>
