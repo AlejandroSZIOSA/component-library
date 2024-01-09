@@ -87,8 +87,8 @@ function App() {
           <CustomAlert color="green" icon="/src/assets/alert-icon3.png" />
         </div>
 
-        <h2>Badge</h2>
-        <div className="badge-container">
+        <h2>Badges</h2>
+        <div className="badges-container">
           <CustomBadge color="grey">
             <FaBeer size="40px" />
           </CustomBadge>
