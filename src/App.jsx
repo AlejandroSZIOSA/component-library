@@ -2,6 +2,7 @@ import { FaBeer } from "react-icons/fa";
 import { AiFillAliwangwang } from "react-icons/ai";
 import { AiFillAccountBook } from "react-icons/ai";
 import "./App.css";
+
 import cardImg1 from "./assets/card-images/img1.jpeg";
 import cardImg2 from "./assets/card-images/img2.jpeg";
 import cardImg3 from "./assets/card-images/img3.jpeg";
@@ -73,7 +74,7 @@ function App() {
     );
   }
 
-  function CustomCard({ children }) {
+  function CustomCard({ children, href, imgSrc, imgAlt }) {
     const styles = {
       container: {
         display: "flex",
@@ -87,9 +88,9 @@ function App() {
     };
     return (
       <div style={styles.container}>
-        <a href="#">
+        <a href={href}>
           <div>
-            <img width="300px" height="200px" src={cardImg1} alt={cardImgAlt} />
+            <img width="300px" height="200px" src={imgSrc} alt={imgAlt} />
           </div>
           {children}
         </a>
@@ -101,10 +102,8 @@ function App() {
     const styles = {
       contentContainer: {
         display: "block",
-        flexDirection: "column",
-        width: "300px",
-        height: "90px",
-        padding: "8px",
+        width: "100%",
+        padding: "5px",
       },
     };
     return (
@@ -151,7 +150,14 @@ function App() {
 
         <h2>Cards</h2>
         <div className="badges-container">
-          <CustomCard>
+          <CustomCard href="#" imgSrc={cardImg1} imgAlt={cardImgAlt}>
+            <CustomCardContent />
+          </CustomCard>
+
+          <CustomCard href="#" imgSrc={cardImg2} imgAlt={cardImgAlt}>
+            <CustomCardContent />
+          </CustomCard>
+          <CustomCard href="#" imgSrc={cardImg3} imgAlt={cardImgAlt}>
             <CustomCardContent />
           </CustomCard>
         </div>
