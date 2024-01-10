@@ -9,6 +9,7 @@ import cardImg3 from "./assets/card-images/img3.jpeg";
 import cardImgAlt from "./assets/card-images/imgAlt.jpg";
 
 function App() {
+  //This is a custom component
   function CustomBtn(props) {
     return (
       <div>
@@ -25,6 +26,7 @@ function App() {
     );
   }
 
+  //This is a custom component
   function CustomAlert(props) {
     return (
       <div
@@ -53,7 +55,8 @@ function App() {
     );
   }
 
-  //Default props + children
+  /* This is a parent component using children component
+    Default props + children */
   function CustomBadge({ children, color, size = "25px" }) {
     return (
       <div
@@ -74,6 +77,7 @@ function App() {
     );
   }
 
+  //This is a parent component using children component
   function CustomCard({ children, href, imgSrc, imgAlt }) {
     const styles = {
       container: {
@@ -98,6 +102,7 @@ function App() {
     );
   }
 
+  //This is a children component
   function CustomCardContent() {
     const styles = {
       contentContainer: {
@@ -108,7 +113,7 @@ function App() {
     };
     return (
       <div style={styles.contentContainer}>
-        <h2> Titel</h2>
+        <h2> Article Title</h2>
         <p>
           This is a paragraph, This is a paragraph, This is a paragraph , This
           is a paragraph, This is a paragraph, This is a paragraph
@@ -117,9 +122,12 @@ function App() {
     );
   }
 
+  //Main App Component
   return (
     <>
-      <h1>Custom Components</h1>
+      <h1 style={{ padding: "5px" }}>
+        Custom React Components [Using props + children]
+      </h1>
       <div className="content-container">
         <h2>Buttons</h2>
         <div className="btn-container">
@@ -130,9 +138,18 @@ function App() {
 
         <h2>Alerts</h2>
         <div className="alerts-container">
-          <CustomAlert color="red" icon="/src/assets/alert-icon1.png" />
-          <CustomAlert color="yellow" icon="/src/assets/alert-icon2.png" />
-          <CustomAlert color="green" icon="/src/assets/alert-icon3.png" />
+          <CustomAlert
+            color="red"
+            icon="/src/assets/alert-icons/alert-icon1.png"
+          />
+          <CustomAlert
+            color="yellow"
+            icon="/src/assets/alert-icons/alert-icon2.png"
+          />
+          <CustomAlert
+            color="green"
+            icon="/src/assets/alert-icons/alert-icon3.png"
+          />
         </div>
 
         <h2>Badges</h2>
@@ -149,7 +166,7 @@ function App() {
         </div>
 
         <h2>Cards</h2>
-        <div className="badges-container">
+        <div className="alerts-container">
           <CustomCard href="#" imgSrc={cardImg1} imgAlt={cardImgAlt}>
             <CustomCardContent />
           </CustomCard>
