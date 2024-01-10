@@ -69,6 +69,31 @@ function App() {
     );
   }
 
+  function CustomCard() {
+    const styles = {
+      container: {
+        display: "flex",
+        flexDirection: "column",
+      },
+    };
+    return (
+      <div style={styles.container}>
+        <div>
+          <img
+            width="400px"
+            height="50px"
+            src="./assets/card-images/img1.jpeg"
+            alt="/assets/card-images/imgAlt.jpg"
+          />
+        </div>
+        <div>
+          <h5> Header</h5>
+          <p> Description</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <h1>Custom Components</h1>
@@ -98,6 +123,11 @@ function App() {
           <CustomBadge color="orange" size="10px">
             <AiFillAccountBook size="20px" />
           </CustomBadge>
+        </div>
+
+        <h2>Cards</h2>
+        <div className="badges-container">
+          <CustomCard />
         </div>
       </div>
     </>
