@@ -2,6 +2,10 @@ import { FaBeer } from "react-icons/fa";
 import { AiFillAliwangwang } from "react-icons/ai";
 import { AiFillAccountBook } from "react-icons/ai";
 import "./App.css";
+import cardImg1 from "./assets/card-images/img1.jpeg";
+import cardImg2 from "./assets/card-images/img2.jpeg";
+import cardImg3 from "./assets/card-images/img3.jpeg";
+import cardImgAlt from "./assets/card-images/imgAlt.jpg";
 
 function App() {
   function CustomBtn(props) {
@@ -69,27 +73,47 @@ function App() {
     );
   }
 
-  function CustomCard() {
+  function CustomCard({ children }) {
     const styles = {
       container: {
         display: "flex",
         flexDirection: "column",
+        width: "300px",
+        height: "400px",
+        backgroundColor: "#EDEDED",
+        border: "2px solid black",
+        borderRadius: "5px",
       },
     };
     return (
       <div style={styles.container}>
-        <div>
-          <img
-            width="400px"
-            height="50px"
-            src="./assets/card-images/img1.jpeg"
-            alt="/assets/card-images/imgAlt.jpg"
-          />
-        </div>
-        <div>
-          <h5> Header</h5>
-          <p> Description</p>
-        </div>
+        <a href="#">
+          <div>
+            <img width="300px" height="200px" src={cardImg1} alt={cardImgAlt} />
+          </div>
+          {children}
+        </a>
+      </div>
+    );
+  }
+
+  function CustomCardContent() {
+    const styles = {
+      contentContainer: {
+        display: "block",
+        flexDirection: "column",
+        width: "300px",
+        height: "90px",
+        padding: "8px",
+      },
+    };
+    return (
+      <div style={styles.contentContainer}>
+        <h2> Titel</h2>
+        <p>
+          This is a paragraph, This is a paragraph, This is a paragraph , This
+          is a paragraph, This is a paragraph, This is a paragraph
+        </p>
       </div>
     );
   }
@@ -127,7 +151,9 @@ function App() {
 
         <h2>Cards</h2>
         <div className="badges-container">
-          <CustomCard />
+          <CustomCard>
+            <CustomCardContent />
+          </CustomCard>
         </div>
       </div>
     </>
