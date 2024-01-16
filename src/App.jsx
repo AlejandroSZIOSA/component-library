@@ -8,120 +8,120 @@ import cardImg2 from "./assets/card-images/img2.jpeg";
 import cardImg3 from "./assets/card-images/img3.jpeg";
 import cardImgAlt from "./assets/card-images/imgAlt.jpg";
 
-function App() {
-  //This is a custom component
-  function CustomBtn(props) {
-    return (
-      <div>
-        <button
-          style={{
-            backgroundColor: props.color,
-            padding: props.size,
-            disabled: false,
-          }}
-        >
-          Buttons
-        </button>
-      </div>
-    );
-  }
-
-  //This is a custom component
-  function CustomAlert(props) {
-    return (
-      <div
+//This is a custom component
+function CustomBtn(props) {
+  return (
+    <div>
+      <button
         style={{
-          display: "Flex",
-          flexDirection: "row",
           backgroundColor: props.color,
-          alignItems: "center",
-          /* border: "1px solid gray", */
-          borderRadius: "10px",
+          padding: props.size,
+          disabled: false,
         }}
       >
-        <div style={{ padding: "10px" }}>
-          <img width="40px" height="40px" src={props.icon}></img>
-        </div>
-        <div
-          style={{
-            fontSize: "xx-large",
-            paddingLeft: "5px",
-            paddingRight: "5px",
-          }}
-        >
-          Alert Message
-        </div>
-      </div>
-    );
-  }
+        Buttons
+      </button>
+    </div>
+  );
+}
 
-  /* This is a parent component using children component
-    Default props + children */
-  function CustomBadge({ children, color, size = "25px" }) {
-    return (
+//This is a custom component
+function CustomAlert(props) {
+  return (
+    <div
+      style={{
+        display: "Flex",
+        flexDirection: "row",
+        backgroundColor: props.color,
+        alignItems: "center",
+        /* border: "1px solid gray", */
+        borderRadius: "10px",
+      }}
+    >
+      <div style={{ padding: "10px" }}>
+        <img width="40px" height="40px" src={props.icon}></img>
+      </div>
       <div
         style={{
-          display: "flex",
-          width: "80px",
-          height: "5px",
-          padding: size,
-          background: color,
-          fontSize: "large",
-          borderRadius: "10px",
-          alignItems: "center",
-          justifyContent: "center",
+          fontSize: "xx-large",
+          paddingLeft: "5px",
+          paddingRight: "5px",
         }}
       >
-        {children} Badge
+        Alert Message
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  //This is a parent component using children component
-  function CustomCard({ children, href, imgSrc, imgAlt }) {
-    const styles = {
-      container: {
+/* This is a parent component using children component
+    Default props + children */
+function CustomBadge({ children, color, size = "25px" }) {
+  return (
+    <div
+      style={{
         display: "flex",
-        flexDirection: "column",
-        width: "300px",
-        height: "400px",
-        backgroundColor: "#EDEDED",
-        border: "2px solid black",
-        borderRadius: "5px",
-      },
-    };
-    return (
-      <div style={styles.container}>
-        <a href={href}>
-          <div>
-            <img width="300px" height="200px" src={imgSrc} alt={imgAlt} />
-          </div>
-          {children}
-        </a>
-      </div>
-    );
-  }
+        width: "80px",
+        height: "5px",
+        padding: size,
+        background: color,
+        fontSize: "large",
+        borderRadius: "10px",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {children} Badge
+    </div>
+  );
+}
 
-  //This is a children component
-  function CustomCardContent() {
-    const styles = {
-      contentContainer: {
-        display: "block",
-        width: "100%",
-        padding: "5px",
-      },
-    };
-    return (
-      <div style={styles.contentContainer}>
-        <h2> Article Title</h2>
-        <p>
-          This is a paragraph, This is a paragraph, This is a paragraph , This
-          is a paragraph, This is a paragraph, This is a paragraph
-        </p>
-      </div>
-    );
-  }
+//This is a parent component using children component
+function CustomCard({ children, href, imgSrc, imgAlt }) {
+  const styles = {
+    container: {
+      display: "flex",
+      flexDirection: "column",
+      width: "300px",
+      height: "400px",
+      backgroundColor: "#EDEDED",
+      border: "2px solid black",
+      borderRadius: "5px",
+    },
+  };
+  return (
+    <div style={styles.container}>
+      <a href={href}>
+        <div>
+          <img width="300px" height="200px" src={imgSrc} alt={imgAlt} />
+        </div>
+        {children}
+      </a>
+    </div>
+  );
+}
 
+//This is a children component
+function CustomCardContent() {
+  const styles = {
+    contentContainer: {
+      display: "block",
+      width: "100%",
+      padding: "5px",
+    },
+  };
+  return (
+    <div style={styles.contentContainer}>
+      <h2> Article Title</h2>
+      <p>
+        This is a paragraph, This is a paragraph, This is a paragraph , This is
+        a paragraph, This is a paragraph, This is a paragraph
+      </p>
+    </div>
+  );
+}
+
+function App() {
   //Main App Component
   return (
     <>
@@ -182,5 +182,4 @@ function App() {
     </>
   );
 }
-
 export default App;
